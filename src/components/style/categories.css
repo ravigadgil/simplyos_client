@@ -1,0 +1,25 @@
+.categories_list {
+  margin-top: 84px;
+}
+
+.category {
+  background: #f6d55c;
+  border-radius: 10px;
+  margin-top: 10px;
+  transition: 0.5s;
+}
+
+.category h2 {
+  padding: 40px;
+  color: black;
+}
+
+.category h2:hover {
+  color: white;
+}
+
+.category:hover {
+  color: white !important;
+  background: #20639b;
+}
+
