@@ -23,12 +23,6 @@ export default class Login extends Component {
           fields="name,email,picture"
           callback={responseFacebook}
           />
-          <GoogleLogin
-            clientId="230260488335-a7v8k9vs0cv1fejq8p3hdrekmcvu1r53.apps.googleusercontent.com"
-            buttonText="LOGIN WITH GOOGLE"
-            onSuccess={responseGoogle}
-            onFailure={responseGoogle}
-          />
       </div>
     );
   }
