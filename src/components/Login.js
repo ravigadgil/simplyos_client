@@ -9,8 +9,7 @@ export default class Login extends Component {
   }
   render() {
     const responseFacebook = (response) => {
-      localStorage.setItem("username", response.name);
-      window.location.href = "/";
+      console.log(response)
     }
     const responseGoogle = (response) => {
       localStorage.setItem("username", response.name);
