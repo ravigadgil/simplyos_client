@@ -24,8 +24,7 @@ export default class Login extends Component {
           callback={responseFacebook}
           />
           <GoogleLogin
-          clientId="	
-          230260488335-a7v8k9vs0cv1fejq8p3hdrekmcvu1r53.apps.googleusercontent.com"
+          clientId="230260488335-a7v8k9vs0cv1fejq8p3hdrekmcvu1r53.apps.googleusercontent.com"
           buttonText="Login"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
