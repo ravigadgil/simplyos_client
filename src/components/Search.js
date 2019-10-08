@@ -23,7 +23,7 @@ export default class Search extends Component {
         document.getElementById('search_results').innerHTML = `Results: ${data.length}`
       })
     })
-    .catch(err => alert('Error Occured'));
+    .catch(err => console.log(err));
   }
 
   render() {
