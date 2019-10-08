@@ -3,20 +3,34 @@ import "./style/categories.css";
 import {Link} from 'react-router-dom';
 
 export default class Categories extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      categories: []
+    }
+  }
+
+  componentDidMount() {
+    fetch('http://simpleosbackend.herokuapp.com/categories')
+    .then(res => res.json())
+    .then(data => this.setState({categories: data}))
+    .catch(err => alert('Error Occured!'));
+  }
+  
   render() {
+    const output = this.state.categories.map((category, i) => (
+      <Link to={'/tests/' + category._id} id={i}>
+        <div className="category">
+          <h2>{category.name}</h2>
+        </div>
+      </Link>
+    ))
     return (
       <div className="categories_list">
-        <div className="container">
-          <Link to={'/tests/category'}>
-            <div className="category">
-              <h2>Category Name</h2>
-            </div>
-          </Link>
-          <Link to={'/tests/category'}>
-            <div className="category">
-              <h2>Category Name</h2>
-            </div>
-          </Link>
+        <div className="container" style={{marginTop: '15px'}}>
+          <h1>Categories</h1>
+          <br />
+          {output}
         </div>
       </div>
     );

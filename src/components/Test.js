@@ -5,8 +5,9 @@ export default class Test extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: ['The answer is b', 'The answer is b', 'The answer is b', 'The answer is b', 'The answer is b'],
-      answers: ['B','B','B','B','B'],
+      test_id: props.match.params.test_id,
+      questions: [],
+      answers: [],
       currentQuestion: 'Question No.1',
       length: 5,
       correctAnswers: 0,
@@ -24,7 +25,7 @@ export default class Test extends Component {
       }
       const question = document.querySelector('.question');
       this.setState({currentIndex: this.state.currentIndex + 1}, () => {
-        question.innerHTML = `Question No.${this.state.currentIndex + 1}<br/><br/>${this.state.questions[this.state.currentIndex]}`;
+      question.innerHTML = `${this.state.currentIndex + 1}/${this.state.length}<br/><br/>${this.state.questions[this.state.currentIndex]}`;
       });
     } else {
       const output = `
@@ -35,13 +36,31 @@ export default class Test extends Component {
   }
 
   componentDidMount() {
-    const question = document.querySelector('.question');
-    question.innerHTML = `Question No.${this.state.currentIndex + 1}<br/><br/>${this.state.questions[this.state.currentIndex]}`;
+    fetch(`http://simpleosbackend.herokuapp.com/test/${this.state.test_id}`)
+    .then(res => res.json())
+    .then(data => {
+      let myData = [];
+      data.questions.forEach(question => {
+        let myQuestion = question;
+        myQuestion = myQuestion.replace('A.', '<br><br>A.');
+        myQuestion = myQuestion.replace('B.', '<br>B.');
+        myQuestion = myQuestion.replace('C.', '<br>C.');
+        myQuestion = myQuestion.replace('D.', '<br>D.');
+        myData.push(myQuestion);
+      });
+      this.setState({questions: myData, answers: data.answers, length: myData.length}, () => {
+        document.querySelector('.container').style.display = 'block';
+        document.getElementById('loading_test').style.display = 'none';
+        const question = document.querySelector('.question');
+        question.innerHTML = `${this.state.currentIndex + 1}/${this.state.length}<br/><br/>${this.state.questions[this.state.currentIndex]}`;
+      });
+    })
+    .catch(err => alert('Error Occured!'));
   }
   render() {
     return (
       <div className="test_container">
-        <div className="container" style={{background: "#173f5f", padding: 30, borderRadius: 10}}>
+        <div className="container" style={{background: "#173f5f", padding: 30, borderRadius: 10, display: 'none'}}>
           <h4 className="question">Question No.1 <br /><br /> Correct answer is b</h4>
           <select class="custom-select">
             <option value="A">A</option>
@@ -51,6 +70,10 @@ export default class Test extends Component {
           </select>
           <br /><br />
           <button onClick={this.changeQuestion} className="btn btn-success" style={{float: "right"}}>Next</button>
+          <br />
+        </div>
+        <div id="loading_test" style={{width: "80vw", margin: "auto", position: 'inherit'}} className="alert alert-success">
+          Loading...
         </div>
       </div>
     );
