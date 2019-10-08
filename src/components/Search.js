@@ -14,7 +14,7 @@ export default class Search extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://simpleosbackend.herokuapp.com/search/${this.state.query_string}`)
+    fetch(`https://simpleosbackend.herokuapp.com/search/${this.state.query_string}`)
     .then(res => res.json())
     .then(data => {
       this.setState({tests: data}, () => {
