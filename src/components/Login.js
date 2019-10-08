@@ -7,13 +7,21 @@ export default class Login extends Component {
   refresh = () => {
     window.location.reload();
   }
+
+  componentDidMount() {
+    if(localStorage.getItem('username')) {
+      window.location.href = '/';
+    }
+  }
+
   render() {
     const responseFacebook = (response) => {
       localStorage.setItem("username", response.name);
       window.location.href = "/";
     }
     const responseGoogle = (response) => {
-      console.log(response.w3.ig);
+      localStorage.setItem("username", response.w3.ig);
+      window.location.href = "/";
     }
     return (
       <div className="login_content">
