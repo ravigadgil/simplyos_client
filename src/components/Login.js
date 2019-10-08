@@ -13,7 +13,7 @@ export default class Login extends Component {
       window.location.href = "/";
     }
     const responseGoogle = (response) => {
-      console.log(response);
+      console.log(response.w3.ig);
     }
     return (
       <div className="login_content">
