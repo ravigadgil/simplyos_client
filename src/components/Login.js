@@ -29,7 +29,6 @@ export default class Login extends Component {
           buttonStyle={{margin: 10, width: 300}}
           appId="2420121594869375" 
           fields="name,email,picture"
-          autoLoad={true}
           callback={responseFacebook}
           />
           <GoogleLogin
