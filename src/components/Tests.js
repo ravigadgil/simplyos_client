@@ -12,7 +12,7 @@ export default class Tests extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://simpleosbackend.herokuapp.com/tests/category/${this.state.category_id}`)
+    fetch(`https://simpleosbackend.herokuapp.com/tests/category/${this.state.category_id}`)
     .then(res => res.json())
     .then(data => {
       if(data.length == 0) {

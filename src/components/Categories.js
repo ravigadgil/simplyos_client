@@ -11,7 +11,7 @@ export default class Categories extends Component {
   }
 
   componentDidMount() {
-    fetch('http://simpleosbackend.herokuapp.com/categories')
+    fetch('https://simpleosbackend.herokuapp.com/categories')
     .then(res => res.json())
     .then(data => this.setState({categories: data}))
     .catch(err => alert('Error Occured!'));

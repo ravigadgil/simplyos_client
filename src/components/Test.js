@@ -36,7 +36,7 @@ export default class Test extends Component {
   }
 
   componentDidMount() {
-    fetch(`http://simpleosbackend.herokuapp.com/test/${this.state.test_id}`)
+    fetch(`https://simpleosbackend.herokuapp.com/test/${this.state.test_id}`)
     .then(res => res.json())
     .then(data => {
       let myData = [];
