@@ -1,16 +1,17 @@
 .navbar {
   width: 100vw;
-  padding: 10px;
+  padding: 0px;
   color: white;
   position: fixed;
   margin-left: 0px;
   background: #333333;
   transition: 0.5s;
-  height: 74px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .navbar a {
-  padding: 10px;
+  padding: 15px;
   font-size: 25px;
   cursor: pointer;
 }
@@ -54,4 +55,19 @@
 #rotate-text {
   width: 25px;
   transform: rotate(360deg);
+}
+
+.web_link {
+  color: white !important;
+  transition: 0.5s;
+}
+
+.web_link:hover {
+  background: gray;
+}
+
+@media(max-width: 500px) {
+ .navbar_web {
+   display: none;
+ }
 }
