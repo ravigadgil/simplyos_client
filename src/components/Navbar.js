@@ -63,7 +63,7 @@ export default class Navbar  extends Component {
       <div>
         <div className="navbar">
           <div className="navbar_left">
-            <img src={Logo} style={{width: 70, marginLeft: 5}} />
+            <img src={Logo} style={{width: 90, marginLeft: 5}} />
           </div>
           <div className="navbar_right">
             <a style={{transition: '0.5s', padding: '15px'}} id="no_rotate-text" className="navbar_toggle" onClick={this.make_navbar_visible}>&#x2630;</a>
