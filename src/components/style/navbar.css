@@ -6,12 +6,12 @@
   margin-left: 0px;
   background: #333333;
   transition: 0.5s;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .navbar a {
-  padding: 15px;
+  padding: 10px;
   font-size: 25px;
   cursor: pointer;
 }
