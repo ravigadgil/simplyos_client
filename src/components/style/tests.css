@@ -1,5 +1,5 @@
 .test {
-  background: #20639b;
+  background: #c5c0ca;
   border-radius: 10px;
   margin-top: 10px;
   transition: 0.5s;
@@ -7,14 +7,13 @@
 
 .test h2 {
   padding: 40px;
-  color: white;
-}
-
-.test h2:hover {
   color: black;
 }
 
+.test h2:hover {
+  color: white;
+}
+
 .test:hover {
-  color: white !important;
-  background: #f6d55c;
+  background: #8a868d;
 }

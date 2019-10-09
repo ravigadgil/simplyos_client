@@ -31,8 +31,7 @@ a {
 .tests_categories {
   width: 100vw;
   color: white;
-  height: 300px;
-  background:#3e3e3e;
+  background:#cac9c0;
   display: flex;
   flex-direction: column;
   justify-content: center;

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './style/navbar.css';
 import {Link} from 'react-router-dom';
+import Logo from '../images/logo.png';
 
 export default class Navbar  extends Component {
   constructor(props) {
@@ -49,14 +50,11 @@ export default class Navbar  extends Component {
 
   make_navbar_visible = () => {
     if(this.state.navbar_visible) {
-      document.querySelector('.navbar').style.marginLeft = "0px"
       document.querySelector('.navbar_content').style.marginLeft = "-250px"
       document.querySelector('.navbar_toggle').id="no_rotate-text"
       this.setState({navbar_visible: false});
     } else {
-      document.querySelector('.navbar').style.marginLeft = "250px"
       document.querySelector('.navbar_content').style.marginLeft = "0px"
-      document.querySelector('.navbar_toggle').id="rotate-text"
       this.setState({navbar_visible: true});
     }
   }
@@ -64,17 +62,22 @@ export default class Navbar  extends Component {
     return (
       <div>
         <div className="navbar">
-          <a style={{transition: '0.5s', padding: '15px'}} id="no_rotate-text" className="navbar_toggle" onClick={this.make_navbar_visible}>&#x2630;</a>
-          <div className="navbar_web">
-            <Link to={'/'} className="web_link">
-              Home
-            </Link>
-            <Link to={'/categories'} className="web_link">
-              Categories
-            </Link>
-            <Link to={this.state.loggedInPath} className="web_link" onClick={this.logOut}>
-              {this.state.loggedInText}
-            </Link>
+          <div className="navbar_left">
+            <img src={Logo} style={{width: 70, marginLeft: 5}} />
+          </div>
+          <div className="navbar_right">
+            <a style={{transition: '0.5s', padding: '15px'}} id="no_rotate-text" className="navbar_toggle" onClick={this.make_navbar_visible}>&#x2630;</a>
+            <div className="navbar_web">
+              <Link to={'/'} className="web_link">
+                Home
+              </Link>
+              <Link to={'/categories'} className="web_link">
+                Categories
+              </Link>
+              <Link to={this.state.loggedInPath} className="web_link" onClick={this.logOut}>
+                {this.state.loggedInText}
+              </Link>
+            </div>
           </div>
         </div>
         <div className="navbar_content" >

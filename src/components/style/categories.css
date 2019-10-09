@@ -3,7 +3,8 @@
 }
 
 .category {
-  background: #f6d55c;
+  background: #8a868d;
+  color: white;
   border-radius: 10px;
   margin-top: 10px;
   transition: 0.5s;
@@ -11,15 +12,14 @@
 
 .category h2 {
   padding: 40px;
-  color: black;
-}
-
-.category h2:hover {
   color: white;
 }
 
+.category h2:hover {
+  color: black;
+}
+
 .category:hover {
-  color: white !important;
-  background: #20639b;
+  background: #c5c0ca;
 }
 

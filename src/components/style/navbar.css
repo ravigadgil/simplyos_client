@@ -1,13 +1,17 @@
 .navbar {
   width: 100vw;
   padding: 0px;
-  color: white;
+  color: black;
   position: fixed;
   margin-left: 0px;
-  background: #333333;
+  background:#cac9c0;
   transition: 0.5s;
   padding-top: 15px;
   padding-bottom: 15px;
+}
+
+.navbar_right {
+  margin-right: 20px;
 }
 
 .navbar a {
@@ -58,12 +62,13 @@
 }
 
 .web_link {
-  color: white !important;
+  color: #3d431c ;
   transition: 0.5s;
+  border-bottom: 2px solid #cac9c0;
 }
 
 .web_link:hover {
-  background: gray;
+  color: #161906
 }
 
 @media(max-width: 500px) {

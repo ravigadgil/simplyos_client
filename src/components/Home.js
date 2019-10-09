@@ -20,10 +20,10 @@ export default class Home extends Component {
         </div>
         <div className="tests_categories">
           <div className="search_content">
-            <h4 style={{color: "#ffff"}}>Search your test</h4>
+            <h4 style={{color: "#3d431c"}}>Search your test</h4>
             <form onSubmit={this.openSearch}>
               <input class="form-control" type="text"
-                aria-label="Search" style={{background: 'transparent', color: 'white'}} />
+                aria-label="Search" style={{background: 'transparent', color: '3d431c', border: '1px solid black'}} />
             </form>
           </div>
         </div>

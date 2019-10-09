@@ -60,7 +60,7 @@ export default class Test extends Component {
   render() {
     return (
       <div className="test_container">
-        <div className="container" style={{background: "#173f5f", padding: 30, borderRadius: 10, display: 'none'}}>
+        <div className="container" style={{background: "#3b444b", padding: 30, borderRadius: 10, display: 'none'}}>
           <h4 className="question">Question No.1 <br /><br /> Correct answer is b</h4>
           <select class="custom-select">
             <option value="A">A</option>
