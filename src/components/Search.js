@@ -36,6 +36,7 @@ export default class Search extends Component {
     ))
     return (
       <div className="search_container">
+        <br /><br />
         <div id="lodaing_search" className="alert alert-success" style={{position: 'inherit', width: "80vw", margin: 'auto'}}>
           Loading...
         </div>

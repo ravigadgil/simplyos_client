@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import './style/home.css';
-import {Link} from 'react-router-dom';
 import Img1 from '../images/img_1.jpg';
-import Img2 from '../images/img2.jpg';
 
 export default class Home extends Component {
   openSearch = (e) => {
@@ -15,19 +13,17 @@ export default class Home extends Component {
   render() {
     return (
       <div className="home_content">
-        <div className="search" style={{backgroundImage: `url(${Img1})`}}>
-
+        <div className="container_2">
+          <img alt="Img" src={Img1} style={{width: "100%", height: "100%", backgroundSize: "cover", backgroundPosition: "center"}} />
         </div>
-        <div className="tests_categories">
+        <div className="container_1">
           <div className="search_content">
-            <h4 style={{color: "#3d431c"}}>Search your test</h4>
+            <h4 style={{color: "#fff"}}>Search your test</h4>
             <form onSubmit={this.openSearch}>
-              <input class="form-control" type="text"
-                aria-label="Search" style={{background: 'transparent', color: '3d431c', border: '1px solid black'}} />
+              <input className="form-control" type="text"
+                aria-label="Search" style={{background: 'transparent', color: 'white', border: '1px solid white'}} />
             </form>
           </div>
-        </div>
-        <div className="search1" style={{backgroundImage: `url(${Img2})`}}>
         </div>
       </div>
     );

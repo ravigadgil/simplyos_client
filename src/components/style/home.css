@@ -1,3 +1,7 @@
+* {
+  font-family: "Comic Sans MS", cursive, sans-serif
+}
+
 .search {
   width: 100vw;
   height: 50vh;
@@ -26,12 +30,19 @@ a {
   color: white;
 }
 
+.home_content {
+  display: flex;
+  height: 100vh;
+}
 
+.container_2 {
+  width: 50%;
+}
 
-.tests_categories {
-  width: 100vw;
+.container_1 {
+  width: 50%;
   color: white;
-  background:#cac9c0;
+  background: #3b3b3b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -39,21 +50,11 @@ a {
   padding: 50px;
 }
 
-.click_me {
-  text-decoration: none;
-  padding: 10px;
-  margin-left: 30%;
-  margin-right: 30%;
-  border-radius: 25px;
-  background: #414a4c;
-  cursor: pointer;
-  text-decoration: none;
-  color: white;
-  border: 2px solid #3333;
-  transition: 0.5s;
-}
-
-.click_me:hover {
-  color: white !important;
-  border-color: #414a4c;
+@media(max-width: 800px) {
+  .container_2 {
+    width: 0px;
+  }
+  .container_1 {
+    width: 100%;
+  }
 }

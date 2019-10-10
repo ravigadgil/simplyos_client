@@ -28,6 +28,7 @@ export default class Categories extends Component {
     return (
       <div className="categories_list">
         <div className="container" style={{marginTop: '15px'}}>
+        <br /><br />
           <h1>Categories</h1>
           <br />
           {output}

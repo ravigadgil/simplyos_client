@@ -17,10 +17,10 @@ export default class Test extends Component {
   }
 
   changeQuestion = () => {
-    if(this.state.currentIndex != this.state.length - 1) {
+    if(this.state.currentIndex !== this.state.length - 1) {
       const select = document.querySelector('.custom-select');
       const userAnswer = select.options[select.selectedIndex].value;
-      if(userAnswer == this.state.answers[this.state.currentIndex]) {
+      if(userAnswer === this.state.answers[this.state.currentIndex]) {
         this.setState({correctAnswers: this.state.correctAnswers + 1});
       }
       const question = document.querySelector('.question');
@@ -60,6 +60,7 @@ export default class Test extends Component {
   render() {
     return (
       <div className="test_container">
+        <br /><br />
         <div className="container" style={{background: "#3b444b", padding: 30, borderRadius: 10, display: 'none'}}>
           <h4 className="question">Question No.1 <br /><br /> Correct answer is b</h4>
           <select class="custom-select">

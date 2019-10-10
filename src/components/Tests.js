@@ -15,7 +15,7 @@ export default class Tests extends Component {
     fetch(`https://simpleosbackend.herokuapp.com/tests/category/${this.state.category_id}`)
     .then(res => res.json())
     .then(data => {
-      if(data.length == 0) {
+      if(data.length === 0) {
         document.getElementById('info').classList = "alert alert-danger";
         document.getElementById('info').innerHTML = "No tests for this category!";
       } else {
@@ -35,6 +35,7 @@ export default class Tests extends Component {
     ))
     return (
       <div>
+        <br /><br />
         <div className="categories_list">
           <div className="container">
             <h1>Tests</h1>

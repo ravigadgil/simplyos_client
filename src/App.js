@@ -15,7 +15,6 @@ class App extends Component {
       <Router>
         <div className="App" style={{minHeight: "100vh", overflowX: "hidden", overflowY: "auto"}}>
           <Navbar />
-          <br /><br />
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/login" exact component={Login} />
