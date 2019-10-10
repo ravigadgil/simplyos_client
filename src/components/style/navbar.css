@@ -76,3 +76,7 @@
    display: none;
  }
 }
+
+.navbar_toggle {
+  color: #3d431c !important;
+}
