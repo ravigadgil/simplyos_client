@@ -30,17 +30,21 @@ export default class Login extends Component {
     return (
       <div className="login_content">
          <FacebookLogin
-          buttonStyle={{margin: 10, width: 300}}
+          style={{width: "300px"}}
           appId="2420121594869375" 
           fields="name,email,picture"
           callback={responseFacebook}
+          cssClass="btnFacebook"
           />
+          <br />
           <GoogleLogin
+          width="300px"
           clientId="230260488335-ocfsijdhr2n38ukt2tc7bigtudhea458.apps.googleusercontent.com"
-          buttonText="Login"
+          buttonText="Login with Google"
           onSuccess={responseGoogle}
           onFailure={responseGoogle}
           cookiePolicy={'single_host_origin'}
+          cssClass="btnFacebook"
         />
       </div>
     );

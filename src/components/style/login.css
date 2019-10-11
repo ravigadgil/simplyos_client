@@ -1,5 +1,17 @@
 .login_content {
-  margin-top: 45vh;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
   text-align: center;
+  justify-content: center;
+  width: 300px;
+  margin: auto;
+}
 
+.btnFacebook {
+  width: 300px;
+  background:  #3b5998;
+  color: white;
+  border: 0px;
+  padding: 7px;
 }

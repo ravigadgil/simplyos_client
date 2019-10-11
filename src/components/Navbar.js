@@ -9,8 +9,8 @@ export default class Navbar  extends Component {
     this.state = {
       navbar_visible: false,
       isLoggedIn: localStorage.getItem('username') ? true : false,
-      loggedInText: localStorage.getItem('username') ? "Log Out" : 'Log In',
-      loggedInPath: localStorage.getItem('username') ? '' : '/login',
+      loggedInText: localStorage.getItem('username') ? "My Account" : 'Log In',
+      loggedInPath: localStorage.getItem('username') ? '/myaccount' : '/login',
     }
   }
 
@@ -23,7 +23,7 @@ export default class Navbar  extends Component {
 
   checkSize() {
     const width = window.innerWidth;
-    if(width > 500) {
+    if(width > 550) {
       document.querySelector('.navbar_toggle').style.display = 'none';
       this.hideNavbar();
     } else {
@@ -41,8 +41,7 @@ export default class Navbar  extends Component {
 
   logOut = () => {
     if(this.state.isLoggedIn) {
-      localStorage.removeItem('username');
-      window.location.href = "/";
+  
     } else {
       this.hideNavbar();
     }

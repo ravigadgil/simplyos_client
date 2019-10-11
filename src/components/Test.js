@@ -12,7 +12,8 @@ export default class Test extends Component {
       length: 5,
       correctAnswers: 0,
       currentIndex: 0,
-      username: localStorage.getItem('username') ? localStorage.getItem('username') : 'Guest'
+      username: localStorage.getItem('username') ? localStorage.getItem('username') : 'Guest',
+      timeLeft: 3600
     }
   }
 
@@ -33,6 +34,12 @@ export default class Test extends Component {
       `;
       document.querySelector('.container').innerHTML = output;
     }
+  }
+
+  quit = () => {
+    this.setState({currentIndex: this.state.length - 1}, () => {
+      this.changeQuestion();
+    });
   }
 
   componentDidMount() {
@@ -56,12 +63,36 @@ export default class Test extends Component {
       });
     })
     .catch(err => alert('Error Occured!'));
+
+    setInterval(() => {
+      if(this.state.timeLeft === 0 && this.statecurrentIndex === this.state.length - 1) {
+        this.quit();
+      } else {
+        this.setState({timeLeft: this.state.timeLeft - 1}, () => {
+          if(this.state.timeLeft === 0) {
+            this.quit();
+          } else {
+            const timeLeft = this.state.timeLeft;
+            const minutes = Math.floor(timeLeft / 60);
+            const secondsLeft = timeLeft - (minutes * 60);
+            try {
+              document.querySelector('.time_left').innerHTML = `${minutes}:${secondsLeft}`;
+            } catch(e) {
+
+            }
+          }
+        }); 
+      }
+    }, 1000);
   }
   render() {
     return (
       <div className="test_container">
         <br /><br />
         <div className="container" style={{background: "#3b444b", padding: 30, borderRadius: 10, display: 'none'}}>
+          <div className="timer" style={{textAlign: 'center', padding: 5}}>
+            <h5 className="time_left">60:00</h5>
+          </div>
           <h4 className="question">Question No.1 <br /><br /> Correct answer is b</h4>
           <select class="custom-select">
             <option value="A">A</option>
@@ -71,6 +102,7 @@ export default class Test extends Component {
           </select>
           <br /><br />
           <button onClick={this.changeQuestion} className="btn btn-success" style={{float: "right"}}>Next</button>
+          <button onClick={this.quit} className="btn btn-danger" style={{float: "right", marginRight: 15}}>Quit</button>
           <br />
         </div>
         <div id="loading_test" style={{width: "80vw", margin: "auto", position: 'inherit'}} className="alert alert-success">
