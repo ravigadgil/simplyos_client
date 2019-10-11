@@ -26,6 +26,7 @@ export default class Test extends Component {
       }
       const question = document.querySelector('.question');
       this.setState({currentIndex: this.state.currentIndex + 1}, () => {
+      select.selectedIndex = 0;
       question.innerHTML = `${this.state.currentIndex + 1}/${this.state.length}<br/><br/>${this.state.questions[this.state.currentIndex]}`;
       });
     } else {
